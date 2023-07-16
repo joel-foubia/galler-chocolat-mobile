@@ -1,0 +1,40 @@
+
+<ion-header>
+
+  <ion-navbar>
+      <ion-title text-center><img src="assets/images/logo.jpg" height="60px" ></ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <div class="bloc-header">
+
+  </div>
+  <p padding class="txtLabel">Concevez un ballotin à votre mesure. Pour commencer, choisissez un ballotin</p>
+  <p text-center class="arrow_icon"><img src="assets/icon/down.svg"  class="animated fadeOutDown infinite delay-3s"></p>
+  <ion-grid>
+
+    <ion-row class="custom-list">
+        <ion-col [ngClass]="{'animated flip': p.won}" id={{p.id}} text-center col-6 *ngFor="let p of ballotins" (click)="makeBallotin(p, $event)">
+          <div *ngIf="p.won">
+                <h3>{{p.nom}}</h3>
+                <p>Composez votre ballotin avec <strong>{{p.max_pralines}}</strong> pralines au prix de <span color="secondary">{{p.prix}}</span></p>  
+                <button ion-button round color="secondary" (click)="goToPage(p)">OK</button>
+          </div>
+          <div *ngIf="p.won===undefined">
+            <ion-avatar>
+              <img [lazyLoad]="p.image">
+            </ion-avatar>
+            <h4>{{p.nom}}</h4>
+            <p><strong>{{p.max_pralines}}</strong> | 
+              <span color="secondary">{{p.prix}}</span>
+            </p>
+          </div>
+          
+        </ion-col>
+      
+    </ion-row>
+  </ion-grid>
+</ion-content> 

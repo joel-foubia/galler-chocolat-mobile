@@ -1,0 +1,47 @@
+page-about {
+  
+  .scroll-content{
+    background-color: color($colors, gris);
+  }
+
+  .toolbar .toolbar-background{
+    // background-color: color($colors, secondary) !important;
+  }
+
+  [map-header]{
+	 text-align: center !important;
+	 opacity: 1 !important;
+  }
+
+  [map-content]{
+  	ion-item{
+	 text-align: center !important;
+  	}
+  }
+
+  [info]{
+  	ion-item{
+  		text-align : left !important;
+  	}
+  }
+
+  [social]{
+    text-align: center;
+    ion-icon{
+      font-size: 30px !important;
+    }
+
+  }
+
+  [wizard-logo]{
+    text-align: center;
+    img{
+        transition: opacity 1s;
+        opacity: 0;
+    }
+
+    img.ng-lazyloaded {
+        opacity: 1;
+    }
+  }
+}

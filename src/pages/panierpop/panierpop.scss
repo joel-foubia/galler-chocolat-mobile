@@ -1,0 +1,76 @@
+page-panierpop {
+    .item-ios {
+        padding: 10px 10px 0 10px !important;
+        h2 {
+            // @extend %overflow;
+            color: darken(color($colors, primary), 11%);
+            font-size: 1.5rem;
+        }
+        p {
+            // @extend %overflow;
+        }
+        .stars {
+            margin-bottom: 7px;
+        }
+    }
+    .item-inner {
+        padding: 0 !important;
+    }
+    .input-wrapper {
+        align-items: flex-start;
+    }
+    .label-ios {
+        margin: 0;
+    }
+    .col {
+        display: flex;
+    }
+    .remove-col {
+        justify-content: flex-end;
+    }
+    .op-btn {
+        width: 29px;
+        height: 27px;
+        border-radius: 0;
+        font-size: .8rem;
+        margin: 0;
+        background: darken(color($colors, secondary), 11%);
+    }
+    #tots {
+        padding: 0 !important;
+        ion-col {
+            padding: 0 !important;
+            font-size: 0.8em !important
+        }
+    }
+    .mid-btn {
+        width: 32px;
+        background: none;
+        color: black !important;
+        border-top: 1px solid darken(color($colors, primary), 11%);
+        border-bottom: 1px solid darken(color($colors, primary), 11%);
+        font-size: 1.5rem;
+    }
+    .remove-btn {
+        width: 65px;
+        border-radius: 0;
+        height: 27px;
+        line-height: 1.5;
+        margin: 0;
+        font-size: 1.3rem;
+    }
+    rating {
+        ul {
+            padding: 0;
+            margin: 4px 0;
+            &.rating li {
+                padding: 5px 2px !important;
+                background: none;
+                // color: color($colors, notify);
+                ion-icon {
+                    font-size: 19px;
+                }
+            }
+        }
+    }
+}

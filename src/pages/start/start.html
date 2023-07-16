@@ -1,0 +1,33 @@
+<!-- <ion-header>
+    <ion-navbar>
+        <ion-title text-center><img src="assets/images/logo.jpg" height="60px"></ion-title>
+    </ion-navbar>
+
+</ion-header> -->
+
+<ion-content class="bg">
+    <ion-slides autoplay="5000" speed="700" loop="true" class="welcome" pager>
+        <ion-slide *ngFor="let n of slides" [ngStyle]="{'background-image': 'url(' + n.img + ')'}">
+            <h3 [ngClass]="{'first_slide': n.author!==undefined}" class="animated fadeIn delay-1s">{{n.title}}<br>
+                <span *ngIf="n.sub!==undefined">{{n.sub}}</span>
+            </h3>
+            <p *ngIf="n.author!==undefined">{{n.author}}</p>
+        </ion-slide>
+    </ion-slides>
+    <!--  <ion-list class="bloc-list" no-lines>
+    <ion-item text-wrap transparent *ngFor="let item of menus" (click)="itemTapped(item)">
+      <ion-avatar item-start>
+        <img src="{{item.icon}}">
+      </ion-avatar>
+      <h3>{{item.title}}</h3>
+      <ion-icon name="ios-arrow-forward-outline" item-end></ion-icon>
+    </ion-item>
+   
+  </ion-list> -->
+
+    <div class="btn-ballotin" text-center (click)="goToBallotins()">
+        <div text-center><img src="assets/icon/down.svg" class="animated fadeOutDown infinite delay-3s down_icon" ></div>
+        <img src="assets/images/bag2.png" alt="">
+        <h3>Quel Ballotin êtes vous ?</h3>
+    </div>
+</ion-content>

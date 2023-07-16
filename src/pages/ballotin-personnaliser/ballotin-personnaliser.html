@@ -1,0 +1,12 @@
+<ion-content>
+  <h2 text-center>Choix du ballotin</h2>
+  <ion-list>
+    <ion-item *ngFor="let b of ballotins" (click)="getBallotin(b)">
+      <p class="name">{{b.nom}}</p>
+      <p class="prix">{{b.prix}} | {{b.max_pralines}} pralines</p>
+      <ion-avatar item-end>
+        <img src="{{b.image}}">
+      </ion-avatar>
+    </ion-item>   
+  </ion-list>
+</ion-content>

@@ -1,0 +1,143 @@
+page-start {
+
+    
+    .welcome {
+        // height: 235px;
+        height: 100%;
+        ion-slide {
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            h3,
+            p {
+                color: color($colors, light);
+                text-align: right;
+                padding-right: 10px;
+            }
+            h3 {
+                margin: auto;
+                margin-right: 0;
+                font-family: 'DearJoe6';
+                // background-color: rgba($color: #000000, $alpha: 0.7);
+                background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.75) 100%);
+                padding: 10px;
+                width: 75%;
+            }
+            p {
+                font-family: 'DearJoe6';
+                overflow: hidden;
+                /* Ensures the content is not revealed until the animation */
+                white-space: nowrap;
+                /* Keeps the content on a single line */
+                margin: 0 auto;
+                /* Gives that scrolling effect as the typing happens */
+                letter-spacing: .15em;
+                /* Adjust as needed */
+                animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+            }
+        }
+
+        ion-slide {
+            .first_slide {
+                background: none;
+                font-family: 'Cantarell-Bold' !important;
+                text-transform: uppercase;
+                background: none !important;
+                width: 100%;
+            }
+        }
+
+        ion-slide:last-child {
+            h3 {
+                color: color($colors, light);
+                span {
+                    font-family: 'Cantarell';
+                    text-transform: uppercase;
+                    color: color($colors, secondary);
+                }
+            }
+        }
+        .swiper-pagination-bullet-active {
+            background: color($colors, secondary);
+        }
+        .swiper-pagination-bullet {
+            background: color($colors, orlight);
+        }
+    }
+
+    .bloc-list {
+        // padding-top: 15px;
+        box-shadow: inset 0 7px 9px -7px rgba(0, 0, 0, 0.7);
+        ion-item {
+            background: transparent;
+            ion-avatar {
+                border-right: 1px solid color($colors, secondary);
+                padding-right: 5px;
+                img {
+                    border-radius: 0;
+                    object-fit: cover;
+                }
+            }
+            ion-icon {
+                color: color($colors, secondary);
+                // animation: 6s ease infinite pulse;
+            }
+        }
+    }
+
+    .btn-ballotin{
+        background-color: rgba($color: #000, $alpha: 0.9);
+        position: absolute;
+        z-index: 2000;
+        bottom:0;
+        width: 100%;
+        img {
+            margin-top: 14px;
+            width: 30%;
+        }
+
+        h3{
+            font-size: 1.1em;
+            color: color($colors, light);
+        }
+    }
+
+    .down_icon{
+        width: 20px !important;
+        height: 20px !important;
+    }
+
+    /* The typing effect */
+    @keyframes typing {
+        from {
+            width: 0
+        }
+        to {
+            width: 100%
+        }
+    }
+    /* The typewriter cursor effect */
+    @keyframes blink-caret {
+        from,
+        to {
+            border-color: transparent
+        }
+        50% {
+            border-color: orange;
+        }
+    }
+    @keyframes pulse {
+        0% {
+            color: color($colors, orlight);
+            transform: scale(1);
+        }
+        25% {
+            color: darken(color($colors, orlight), 10%);
+            transform: scale(1.015);
+        }
+        50% {
+            color: color($colors, orlight);
+            transform: scale(1);
+        }
+    }
+}

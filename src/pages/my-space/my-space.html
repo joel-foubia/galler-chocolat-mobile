@@ -1,0 +1,61 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Mon Espace</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+  <p class="titre" text-center>Voici la liste des ballotins conçus. Cliquez sur un ballotin pour consulter les détails</p>
+    <ion-list *ngIf="ballotins.length!=0" class="accordion-list">
+        <!-- First Level -->
+        <ion-list-header *ngFor="let item of ballotins; let i = index" no-lines no-padding>
+          <!-- Toggle Button -->
+          <button ion-item (click)="toggleSection(i)" detail-none [ngClass]="{'section-active': item.open, 'section': !item.open}">
+            <ion-icon item-left name="arrow-forward" *ngIf="!item.open"></ion-icon>
+            <ion-icon item-left name="arrow-down" *ngIf="item.open"></ion-icon>
+              {{ item.myname }}
+          </button>
+     
+          <ion-list *ngIf="item.pralines && item.open">
+            <ion-grid class="ballotin">
+              <ion-row>
+                <ion-col col-9>
+                  <p>Pack {{item.nom}}</p> | {{item.max}} pralines
+                </ion-col>
+                <ion-col col-3>
+                    {{item.prix}}
+                </ion-col>
+              </ion-row>
+              <ion-row class="livraison">
+                <ion-col col-12>
+                  <ion-item transparent>
+                    <ion-icon name="pin" color="praline" item-start></ion-icon>
+                    <h4>{{item.livraison.nom_du_magasin}}</h4>
+                    <p text-wrap>{{item.livraison.adresse}}</p>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+            <!-- Third Level -->
+            <ion-item lines *ngFor="let child of item.pralines; let k = index" detail-none class="animated fadeIn child-item" text-wrap>
+              <ion-avatar item-start>
+                <img src="{{child.img}}" />
+              </ion-avatar>
+              <h2>{{ child.nom }} (x{{child.quantite}})</h2>
+              <!-- <p text-lowercase>{{ item.information }}</p> -->
+              <!-- Direct Add Button -->
+              <!-- <button ion-button outline item-end (click)="buyItem(item)">{{ item.price }}</button> -->
+            </ion-item>
+          </ion-list>
+     
+        </ion-list-header>
+      </ion-list>
+      <div text-center *ngIf="ballotins.length==0">
+        <p>Vous n'avez pas encore confectionner votre ballotin</p>
+        <button class="animated zoomIn" ion-button color="praline" (click)="goToCreation()">Créer un Ballotin</button>
+      </div>
+          
+</ion-content>

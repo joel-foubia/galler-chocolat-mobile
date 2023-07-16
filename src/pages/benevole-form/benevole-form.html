@@ -1,0 +1,39 @@
+<ion-header>
+
+  <ion-toolbar>
+    <ion-title>
+        DEVENEZ AMBASSADEUR
+    </ion-title>
+	    
+        <ion-buttons end>
+            <button ion-button icon-only (click)="close()"><ion-icon name="close"></ion-icon></button>
+        </ion-buttons>
+    </ion-toolbar>
+
+</ion-header>
+
+<ion-content padding>
+	<ion-list>
+
+      <ion-item>
+        <ion-label floating>NOM*</ion-label>
+        <ion-input type="text" [(ngModel)]="ambassador.name"></ion-input>
+      </ion-item>
+      <!-- <ion-item>
+        <ion-label floating>EMAIL*</ion-label>
+        <ion-input type="email" [(ngModel)]="ambassador.email"></ion-input>
+      </ion-item> -->
+      <ion-item>
+        <ion-label floating>SUJET*</ion-label>
+        <ion-input type="text" [(ngModel)]="ambassador.sujet"></ion-input>
+      </ion-item>
+
+       <ion-item>
+        <ion-label floating>MESSAGE*</ion-label>
+        <ion-textarea name="message" [(ngModel)]="ambassador.message"></ion-textarea>
+      </ion-item>
+
+    </ion-list>
+
+	    <button full ion-button color="primary" (click)="saveItem()">ENVOYER</button> 
+</ion-content>

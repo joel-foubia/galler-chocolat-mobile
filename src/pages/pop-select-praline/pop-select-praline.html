@@ -1,0 +1,64 @@
+<ion-content padding *ngIf="!showCheckout">
+    <h6 text-center>Glissez et choisissez le nombre de praline <span>{{sel_praline.nom}}</span></h6>
+    <!-- <ion-slides #numb [ngClass]="{'animated zoomIn activated': isVisible}">
+        <ion-slide (click)="selectUnit(item)" *ngFor="let item of tabNumbers">
+            {{item}}
+        </ion-slide>
+    </ion-slides>
+    <ion-fab id="btn_left">
+        <button (click)="slidePrev()" clear ion-fab mini><ion-icon name="ios-arrow-back"></ion-icon></button>
+    </ion-fab>
+    <ion-fab id="btn_right">
+        <button (click)="slideNext()" clear ion-fab mini><ion-icon name="ios-arrow-forward"></ion-icon></button>
+    </ion-fab> -->
+    <div text-center>
+        <img src="assets/icon/down.svg" class="animated fadeOutDown infinite down_icon" alt="">
+    </div>
+    <ion-item [ngClass]="{'animated zoomIn activated': isVisible}" class="bloc-slider">
+        <ion-range min="0" max="{{residual}}" [(ngModel)]="nbSelected" color="light">
+            <ion-label range-left>0</ion-label>
+            <ion-label range-right>{{residual}}</ion-label>
+        </ion-range>
+        <!-- <h6>Il reste {{leftPralines}} pralines à sélectionner.</h6> -->
+    </ion-item>
+    <!-- <ion-grid>
+    <ion-row>
+      <ion-col [ngClass]="{'animated zoomIn activated': isVisible}" *ngFor="let item of tabNumbers" (click)="selectUnit(item)">
+        {{item}}
+      </ion-col>
+    </ion-row>
+    
+  </ion-grid> -->
+</ion-content>
+<ion-footer *ngIf="!showCheckout">
+    <ion-row class="bloc-footer">
+        <ion-col col-3 text-center>
+            <button ion-button icon-only clear (click)="close()"><ion-icon name="ios-close-circle-outline"></ion-icon></button>
+        </ion-col>
+        <ion-col id="number_selected" text-center col-6>
+            {{nbSelected}}
+            <!-- <ion-input class="text-code" type="number" min="0" [max]="ballotin.max_pralines" [(ngModel)]="nbSelected"></ion-input> -->
+        </ion-col>
+        <ion-col col-3 text-center>
+            <button ion-button icon-only clear (click)="confirm()"><ion-icon name="ios-checkmark-circle-outline"></ion-icon></button>
+        </ion-col>
+    </ion-row>
+</ion-footer>
+
+<div text-center *ngIf="showCheckout" [ngClass]="{'animated flipInX custom-card': showCheckout}">
+    <div class="bloc-header">
+        <h5>{{ballotin.nom}} | {{ballotin.max_pralines}} pralines</h5>
+        <h4>{{ballotin.prix}}</h4>
+        <p *ngIf="totalSelected != undefined">{{totalSelected}} pralines sélectionnés</p>
+        <p *ngIf="totalSelected == undefined">{{ballotin.max_pralines}} pralines sélectionnés</p>
+        <h6 *ngIf="!isPay">Il vous reste {{leftPralines}} pralines. </h6>
+        <h6 *ngIf="totalSelected>=ballotin.max_pralines">Super! vous venez de finir votre propre ballotin</h6>
+    </div>
+    <button *ngIf="totalSelected>=ballotin.max_pralines" color="secondary" ion-button (click)="checkPayment()">
+    Procéder au Paiement
+  </button>
+
+    <button *ngIf="totalSelected<ballotin.max_pralines" class="animated jello count" color="secondary" ion-button (click)="goToNextPraline()">
+      Choisir une autre Praline
+  </button>
+</div>

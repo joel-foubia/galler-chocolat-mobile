@@ -1,0 +1,30 @@
+<ion-header>
+
+    <ion-navbar>
+        <ion-title text-center><img src="assets/images/logo.jpg" height="60px"></ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+    <p class="txt_choice" text-center>Faites défiler les pralines et faites votre choix</p>
+    <ion-slides #Pralines>
+        <ion-slide *ngFor="let p of pralines">
+            <div *ngIf="!isReady" text-center [ngClass]="{'animated slideOutDown': isVisible}" class="custom-praline">
+                <h4>{{p.nom}}</h4>
+                <div class="custom-bar"></div>
+                <img class="animated fadeIn" (click)="showPopUp(p)" [src]="p.img_url_white">
+            </div>
+            <div (click)="showPopUp(p)" text-center>
+                <img src="assets/icon/down.svg" id="down_icon" class="animated fadeOutDown infinite" alt="">
+            </div>
+        </ion-slide>
+    </ion-slides>
+    <!-- end of list-->
+
+    <div text-center *ngIf="isPanier" class="animated slideInUp panier">
+        <img [ngClass]="{'animated jello': isInPannier}" (click)="goToPanier()" src="assets/images/shopping_bag_empty.png">
+    </div>
+    <!-- end of bag -->
+
+</ion-content>

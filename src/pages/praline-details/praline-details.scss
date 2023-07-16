@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css?family=Pacifico");
+page-praline-details {
+  .scroll-content{
+    background-color : color($colors, noir);
+  }
+  .swiper-slide img{
+    max-width: 70%;
+  }
+  .slide {
+        height: 80%;
+    }
+   
+      .modal_content {
+        position: absolute;
+        ion-buttons{
+          color: 1px solid color($colors, secondary);
+        }
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 100;
+        margin-top: 1px;
+        background: color($colors, noir);
+      }
+      .swiper-pagination-bullet {
+        height: 3px;
+        width: 15px;
+    }
+    .pagination{
+      color : color($colors, secondary) !important;
+    }
+    .swiper-pagination-progress .swiper-pagination-progressbar{
+      background: color($colors, secondary);
+    }
+    .swiper-pagination-bullet-active {
+        background: color($colors, praline);
+    }
+    .swiper-pagination-bullet {
+        background: color($colors, praline);
+    }
+    
+      h2{
+        margin-top:0;
+        color : color($colors, praline) !important;
+        font-size : 30px !important;
+        text-align : center;
+        font-family: "Pacifico", cursive;
+        font-weight : lighter !important;
+      }
+      p{
+        color : color($colors, light) !important;
+        font-weight : lighter !important;
+        padding: 5px;
+      }
+      .toolbar .toolbar-title{
+			color : color($colors, light) !important;
+		}
+
+}

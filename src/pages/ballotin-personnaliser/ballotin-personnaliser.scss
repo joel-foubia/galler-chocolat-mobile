@@ -1,0 +1,22 @@
+page-ballotin-personnaliser {
+.item-md{
+    // background-color: color($colors, noir) !important;
+}
+.scroll-content{
+    // background-color: color($colors, noir) !important;
+
+}
+ion-content{
+    // background-color: color($colors, noir) !important;
+}
+// .input-wrapper{
+//     color: #ffffff;
+// }
+ion-item{
+    color : color($colors, noir);
+}
+.prix{
+    color : color($colors, praline);
+    font-size: 12px;
+}
+}

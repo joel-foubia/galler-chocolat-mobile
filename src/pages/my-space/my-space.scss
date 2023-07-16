@@ -1,0 +1,64 @@
+page-my-space {
+
+    .titre{
+        color: color($colors, dark);
+    }
+
+    .ballotin{
+        background-color: color($colors, noir);
+        color: color($colors, light);
+        p{
+            color: color($colors, light);
+        }
+
+        [col-3]{
+            font-size: 1.3em;
+        }
+
+        ion-item{
+            background-color: transparent;
+            h4, p{
+                color: color($colors, praline);
+            }
+        }
+    }
+
+    .accordion-list {
+        background: color($colors, light);
+        height: 100%;
+    }
+    .section {
+        background: color($colors, gris);
+        text-transform: capitalize;
+        color: #000;
+        margin-bottom: 4px;
+    }
+    .section-active {
+        background: color($colors, praline);
+        color: #fff;
+    }
+ 
+    .child {
+        background: #e8e7e6;
+        color: #000;
+        margin-bottom: 4px;
+    }
+    .child-item {
+        // background: #f3f2f1;
+        padding: 10px;
+        h2{
+            font-size: 1.2em !important;
+        }
+        
+        .item-inner{
+            border-bottom: 1px solid rgba($color: #f2912c, $alpha: 0.2) !important;
+        }
+        
+    }
+    .label {
+        margin: 0px;
+    }
+    .list {
+        margin-bottom: 4px;
+    }
+}

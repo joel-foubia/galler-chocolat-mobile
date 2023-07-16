@@ -1,0 +1,47 @@
+<!--
+  Generated template for the PaniermodalPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>{{name}}</ion-title>
+        <ion-buttons end>
+            <button (click)="closeModal()" ion-button icon-only>
+        <ion-icon name="close"></ion-icon>
+      </button>
+        </ion-buttons>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <p class="titre">Après la composition de votre ballotin sur la base {{ballotin.nom}} pour le prix {{ballotin.prix}} | {{ballotin.max}}. Veuillez définir le nom de votre ballotin et choisir un point de livraison</p>
+    <ion-item>
+        <ion-label stacked>Nommer à votre ballotin (*)</ion-label>
+        <ion-input type="text" [(ngModel)]="name"></ion-input>
+    </ion-item>
+
+    <ion-list>
+        <ion-list-header>
+            Choisissez votre point de livraison
+        </ion-list-header>
+        <p *ngIf="spinnerObj"><ion-spinner name="dots"></ion-spinner></p>
+        <div *ngIf="!spinnerObj">
+            <button ion-item *ngFor="let item of boutiques" (click)="itemSelected(item)">
+              <h4>
+                {{ item.nom_du_magasin }}
+              </h4>
+              <p>
+                <ion-icon name="location"></ion-icon> {{item.adresse}} <br>
+                <ion-icon name="call"></ion-icon> {{item.phone}} 
+                <!-- <ion-icon name="mail"></ion-icon> {{item.email}} -->
+              </p>
+              <ion-note item-end>{{item.distFrom}} Km</ion-note>
+          </button>
+        </div>
+    </ion-list>
+</ion-content>

@@ -1,0 +1,23 @@
+ion-app.wp {
+    maps-page {
+        .search-container {
+            .search-toolbar {
+                .bar-buttons {
+                    .geolocation-button {
+                        margin-top: 14px !important;
+                        margin-left: 10px !important;
+                    }
+                }
+            }
+        }
+        ion-searchbar {
+            background: transparent;
+            .searchbar-input-container {
+                border-radius: 1.6rem;
+            }
+            .searchbar-input {
+                border-radius: 1.5rem;
+            }
+        }
+    }
+}

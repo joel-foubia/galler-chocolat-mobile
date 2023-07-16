@@ -1,0 +1,30 @@
+page-paniermodal {
+    ion-icon {
+        color: color($colors, secondary) !important
+    }
+
+    .titre{
+        color: color($colors, dark);
+        text-align: center;
+    }
+
+    ion-note{
+        font-size: 0.9em;
+        color: color($colors, secondary) !important;
+    }
+
+    .item-input{
+        background-color: color($colors, gris);
+
+        label{
+            color: color($colors, dark) !important;
+        }
+    }
+    
+    .item-input-has-focus{
+        label{
+            color: color($colors, dark) !important;
+        }
+
+    }
+}

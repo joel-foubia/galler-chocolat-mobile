@@ -1,0 +1,33 @@
+
+<ion-header class="detail-header">
+
+  <ion-navbar>
+    <ion-title></ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+<div class="detail-head">
+    <div class="head-img">
+      <img *ngIf="actu.better_featured_image!=null" [src]="actu.better_featured_image.source_url"  />
+	  <img *ngIf="actu.better_featured_image==null" [src]="defaultImage"  />
+      <div class="user-action">
+        <ion-icon name="md-share" color="light" (click)="shareNews()"></ion-icon>
+      </div>
+      
+    </div>
+    <h2 text-uppercase> {{actu.title.rendered}} </h2>
+    <div class="stars"></div>
+    <p class="info" no-margin>publié le {{actu.date| date: 'dd/MM/yyyy'}}</p>
+  </div> 
+
+  <div class="guide" [innerHTML]="actu.excerpt.rendered">   </div>
+  <!--<ion-fab right bottom>
+      <button ion-fab color="primary" >
+      	<ion-icon name="md-share"></ion-icon>
+      </button>
+  	</ion-fab>-->
+
+</ion-content> 

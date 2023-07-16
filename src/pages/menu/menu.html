@@ -1,0 +1,19 @@
+<ion-menu [content]="content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title></ion-title>
+    </ion-toolbar>
+  </ion-header>
+ 
+  <ion-content item-bcg>
+    <ion-list no-margin>
+      <button ion-item menuClose no-lines no-lines *ngFor="let p of pages" (click)="openPage(p)">
+          <ion-avatar item-start> <img [src]="p.icon" /></ion-avatar>
+          {{ p.title }}
+        </button>
+    </ion-list> 
+  </ion-content>
+</ion-menu>
+ 
+<!-- main navigation -->
+<ion-nav [root]="rootPage" [class.animateApp]="animateVarible==true" #content swipeBackEnabled="false"></ion-nav>

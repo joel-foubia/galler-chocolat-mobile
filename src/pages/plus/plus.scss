@@ -1,0 +1,40 @@
+page-plus {
+    [item-bcg] {
+        background-color: color($colors, noir);
+        [ion-item] {
+            background-color: color($colors, noir);
+            border-color: color($colors, noir) !important;
+            color: color($colors, light);
+            img {
+                width: 25px;
+                height: 25px;
+            }
+            ion-avatar {
+                padding-top: 8px;
+            }
+        }
+    }
+    .bloc-list {
+        padding-top: 15px;
+        color: color($colors, light) !important;
+        box-shadow: inset 0 7px 9px -7px rgba(0, 0, 0, 0.7);
+        ion-item {
+            background: transparent;
+            ion-avatar {
+                border-right: 1px solid color($colors, light);
+                padding-right: 5px;
+                img {
+                    border-radius: 0;
+                    object-fit: cover;
+                }
+            }
+            ion-icon {
+                color: color($colors, light);
+                // animation: 6s ease infinite pulse;
+            }
+        }
+    }
+    h3 {
+        color: white !important
+    }
+}

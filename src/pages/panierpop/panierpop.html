@@ -1,0 +1,44 @@
+<!--
+  Generated template for the PanierpopPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<!-- <ion-header>
+
+  <ion-navbar>
+    <ion-title>panierpop</ion-title>
+  </ion-navbar>
+
+</ion-header> -->
+
+
+<ion-content padding>
+    <h5 text-center>Modifier les pralins dans votre ballotin</h5>
+    <ion-list class="cart-list">
+        <ion-item *ngFor="let item of ballotin.pralines; let i = index">
+            <ion-thumbnail item-start>
+                <h4>{{i+1}}</h4>
+            </ion-thumbnail>
+            <h2 class="bold" text-uppercase>{{item?.nom}}</h2>
+            <ion-grid no-padding>
+                <ion-row>
+                    <ion-col text-left col-6>
+                        <button ion-button icon-only class="op-btn" color="secondary" (click)="decrementQty(item)">
+              <ion-icon name="md-remove"></ion-icon>
+            </button>
+                        <button ion-button icon-only class="op-btn mid-btn">
+              {{item.quantite}}
+            </button>
+                        <button ion-button icon-only class="op-btn" color="secondary" (click)="incrementQty(item)">
+              <ion-icon name="md-add"></ion-icon>
+            </button>
+                    </ion-col>
+                    <ion-col class="remove-col" col-6>
+                        <button ion-button color="danger" class="remove-btn" (click)="removeFromCart(item)" text-uppercase>Retirer</button>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-item>
+    </ion-list>
+</ion-content>

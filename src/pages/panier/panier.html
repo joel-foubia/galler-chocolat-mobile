@@ -1,0 +1,69 @@
+<!--
+  Generated template for the PanierPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>panier</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+    <div *ngIf="cartList == undefined">
+        <h1 text-center>Votre panier est vide</h1>
+    </div>
+    <ion-list *ngIf="cartList != undefined" class="cart-list">
+        <ion-item *ngFor="let item of cartList">
+            <ion-thumbnail (click)="goToDetail(item)" item-start>
+                <img src="{{item.img}}">
+            </ion-thumbnail>
+            <h2 (click)="goToDetail(item)" class="bold" text-uppercase>{{item?.nom}}</h2>
+            <p (click)="goToDetail(item)" class="bold" color="dark" text-uppercase><span color="danger">Prix Total : {{item.prix}}</span></p>
+            <!-- <rating [(ngModel)]="item.rate" readOnly="false" max="5" emptyStarIconName="md-star-outline" halfStarIconName="md-star-half" starIconName="md-star" nullable="false"></rating> -->
+            <ion-grid no-padding>
+                <ion-row>
+                    <ion-col (click)="goToDetail(item)" text-left col-6>
+                        <ion-row id="tots">
+                            <ion-col>
+                                Pralines types : {{item.pralines.length}}
+                            </ion-col>
+                            <ion-col>
+                                Total Pralines : {{item.total}}
+                            </ion-col>
+                        </ion-row>
+
+                        <!-- <button ion-button icon-only class="op-btn" color="secondary" (click)="decrementQty(item)">
+                  <ion-icon name="md-remove"></ion-icon>
+                </button>
+                        <button ion-button icon-only class="op-btn mid-btn">
+                  {{item.total}}
+                </button>
+                        <button ion-button icon-only class="op-btn" color="secondary" (click)="incrementQty(item)">
+                  <ion-icon name="md-add"></ion-icon>
+                </button>-->
+                    </ion-col>
+                    <ion-col class="remove-col" col-6>
+                        <ion-row>
+                            <ion-col>
+                                <button (click)="placeOrder(item)" class="remove-btn" color="secondary" ion-button>Pay</button>
+                            </ion-col>
+                        </ion-row>
+                        <ion-row>
+                            <ion-col>
+                                <button ion-button color="danger" class="remove-btn" (click)="removeFromCart(item)" text-uppercase>Retirer</button>
+                            </ion-col>
+                        </ion-row>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-item>
+    </ion-list>
+    <div *ngIf="cartList != undefined" style="padding: 25px">
+        <!-- <button (click)="placeOrder()" color="secondary" ion-button round block>Proceed payment</button> -->
+    </div>
+</ion-content>

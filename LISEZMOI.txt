@@ -1,0 +1,208 @@
+GALLER CHOCOLATE MOBILE
+-----------------------------
+Conception des ballotins composés des pralines (chocolat) GALLER
+
+Installation 
+création du projet Ionic 3
+Plugins
+Templates
+Executer l'application via le navigateur
+
+-------------------------------------
+INSTALLATION ET CONFIGURATION IONIC 3
+-------------------------------------
+Environnement de développement
+L'application sera développé sous le framework Ionic 3.
+version 3.9+
+Cordova platform : cordova-android 6.3.0
+
+
+
+-------
+Plugins
+-------
+- Device
+---------
+Il s'agira de savoir quels sont les features du Smartphone 
+qui seront utilisé par l'appareil.
+- Telephone : 
+	ionic cordova plugin add call-number
+	npm install --save @ionic-native/call-number
+	
+- SMS
+	ionic cordova plugin add cordova-sms-plugin
+	npm install --save @ionic-native/sms
+
+- Social Network
+	ionic cordova plugin add cordova-plugin-x-socialsharing
+	npm install --save @ionic-native/social-sharing
+
+- Email
+	ionic cordova plugin add cordova-plugin-email-composer
+	npm install --save @ionic-native/email-composer
+
+- Firebase (video tutorial https://www.youtube.com/watch?v=Q7BNG5EnXCs)
+	$ npm install angularfire2@4.0.0-rc0 firebase@3.6.6 --save
+
+- Ajour SweetAlert
+	$ npm install sweetalert --save
+	inclure : import swal from 'sweetalert';
+	Exemple: swal("Good job!", "You clicked the button!", "success");
+
+- Plugin Speech Recognition
+	$ ionic cordova plugin add cordova-plugin-speechrecognition
+	$ npm install --save @ionic-native/speech-recognition
+
+- Plugin QR Code
+	$ ionic cordova plugin add phonegap-plugin-barcodescanner
+	$ npm install --save @ionic-native/barcode-scanner
+	
+- Plugin INTL
+	$ npm install ionic2-calendar moment intl --save
+	
+- Plugin Image Picker
+	$ ionic cordova plugin add cordova-plugin-telerik-imagepicker --variable PHOTO_LIBRARY_USAGE_DESCRIPTION="your usage message"
+	$ npm install --save @ionic-native/image-picker
+
+- Plugin Crop Image
+	$ ionic cordova plugin add cordova-plugin-crop
+	$ npm install --save @ionic-native/crop
+
+- Plugin Camera
+	$ ionic cordova plugin add cordova-plugin-camera
+	$ npm install --save @ionic-native/camera
+
+
+- Plugin ng Dragula
+	$ npm install ng2-dragula --save
+	
+- Plugin Network Information
+	$ ionic cordova plugin add cordova-plugin-network-information
+	$ npm install --save @ionic-native/network
+	
+- Plugin Local Notification 
+	$ ionic cordova plugin add cordova-plugin-local-notification
+	$ npm install --save @ionic-native/local-notifications
+	
+--------------------------
+TEMPLATES
+--------------------------
+
+
+
+-----------------
+RUNNING
+-----------------
+- Après avoir dupliqué le projet <galler-mobile>
+Ouvrir l'invite de commande:
+	cd galler-mobile
+	ionic serve (execute sur le browser)
+	ionic serve -l (visualisation Android, iOS)
+	
+	|-------------------------------------|
+	|Pour les tests, procéder avant d'executer
+	|-------------------------------------
+	|Utiliser le naviguateur Chrome
+	|AJouter l'extension "Allow Cross Origin"
+	|
+
+--
+BUILD APPLICATION
+-------------------------------------
+- Création du fichier apk
+  *
+  (le fichier sera stocké à la racine du projet)
+  * Ajout de la plateforme android
+	$ ionic cordova platform add android
+	$ ionic cordova build android --prod --release
+  * Déplacer le fichier apk (créée)==> (voir fichier DEPLOIEMENT APP MOBILE)
+
+--
+GENERATE APK FILE
+-----------------------
+  Signer le fichier apk
+  ---------------------
+  * Créer une clé privée
+  keytool -genkey -v -keystore my-release-key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias my-alias
+	- alias = onaitconsulting
+	- mot de passe:onaitconsulting17
+  
+	Mot de passe pour alias onaitconsulting (pwd:onaitconsulting17)
+  
+  * Signer le fichier apk non signé
+  ---------------------------------
+  jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore onaitconsulting.keystore android-release-unsigned.apk onaitconsulting
+  
+  * Optimiser le fichier apk
+  --------------------------
+  C:/Users/Home/AppData/Local/Android/Sdk/build-tools/26.0.2/zipalign -v 4 android-release-unsigned.apk galler-mobile.apk
+   (zipalign =>android_sdk/build-tools/VERSION/zipalign
+ 
+  *Verify that app is signed (seulement pour les versions ionic < 2
+  --------------------------
+  C:/Users/Home/AppData/Local/Android/Sdk/build-tools/26.0.2/apksigner verify galler-mobile.apk
+
+
+--------------------
+CHANGELOG
+--------------------
+13/09/2018
+Objectif: réalisation la création d'un ballotin personnalisé par le client 
+
+Vue Choix du ballotin
+- Amélioration de la vue pour une meilleur présentation : les aspects styles et effets ont été ajouté
+
+Vue Shopping
+Cette vue permet à un client de confectionner son ballotin 
+- définition de la vue permettant d'afficher :
+	* la liste des pralines est présenté sous forme de Slider : l'utilisateur aura la possibilité de naviguer de la gauche vers la droite pour choisir une praline
+	* Définition du Slider et implémentation des controles sur Slider
+	* Mise en forme des images de pralines qui s'affichent à l'écran
+	* Implémentation de l'animation pour la procédure de sélection d'un Praline
+	
+Pop Up sélection du nombre de Praline
+- Sur cette vue, il s'agit d'un Pop up surlequel sera afficher le nombre de pralines liées
+au ballotin choisit précédemment par le client 
+- Définition et mise en page de la vue : les nombres seront affichés en lignes et colonnes
+- Définition et implémentation des controles qui sont appliqués sur la vue 
+
+
+Implémentation
+- src/pages/shop
+- src/pages/creation
+
+
+10/09/2018
+Objectif :
+- Configuration des plugins suivants :
+* Un plugin AfProvider: ce plugin permet de récupérer les informations depuis firebase 
+	- La fonction permettant de récupérer la liste des boutiques
+	- la fonction permettant de récupérer la liste des ballotins en fonction du choix du client 
+
+- Définition de la barre des menus au pied de page 
+Les Menus qui ont été définit au pied de page permettent à l'utilisateur de naviguer entre les différentes rubriques principales :
+	* Accueil
+	* Rechercher
+	* Choisir son Ballotin
+	* Les pralines
+	* Plus => (Dans cette rubrique, on va retrouver le menu Espace Client et la page A Propos)
+	
+	
+- Définition du menu Principal 
+	- Mise en page de la page d'accueil
+	- Première définition de la mise en forme de la page (Vue Accueil)
+	- Définition des controles permettant d'accéder aux vues définies sur la dite page 
+
+- Définition de la page A Propos
+	- les informations sur la page A Propos sont accessible depuis firebase via le lien ci-dessous
+	- Définition de la Mise en page de la vue A Propos 
+	- Mise en forme de la vue A Propos 
+	- Définition des controles et des actions (sur les liens social network) 
+
+
+05/08/2018
+Configuration initial du projet
+	- fichier config.xml
+	- fichier package.json
+	- fichier ionic.config.json
+	

@@ -1,0 +1,81 @@
+page-creation {
+
+    .arrow_icon {
+        margin-bottom: 0;
+        margin-top:0;
+        img{
+            width: 30px !important;
+            height: 20px !important;
+        }
+    }
+
+    .bloc-header{
+        height: 160px;
+        background-image: url("../assets/images/banner.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+
+    .txtLabel{
+        margin-top:0;
+        margin-bottom: 0;
+        color: color($colors, noir);
+        text-align: center;
+    }
+
+    .custom-list{
+        ion-col{
+            ion-avatar{
+                width: 80px;
+                height: 80px;
+                margin:auto;
+                img {
+                    opacity:0.3;
+                    transition: opacity 1s;
+                }
+        
+                img.ng-lazyloaded {
+                    opacity: 1;
+                }
+            }
+
+            h4,p{
+                margin-bottom: 0;
+                margin-top:0;
+                font-family: "Cantarell";
+            }
+
+            h4{
+                font-size: 1.2em;
+            }
+
+            p{
+                
+                color: color($colors, noir);
+                strong{
+                    color: color($colors, dark);
+                }
+
+                span{
+                    color: color($colors, secondary);
+                }
+            }
+        }
+
+        ion-col:first-child, ion-col:nth-child(3){
+            border-right: 2px solid color($colors, grislight);
+            border-bottom: 2px solid color($colors, grislight);
+            // border-image: linear-gradient(to right, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%) !important;
+        }
+        
+        ion-col:nth-child(3){
+            border-bottom: 2px solid transparent;
+        }
+        
+        ion-col:nth-child(2){
+            border-bottom: 2px solid color($colors, grislight);
+        }
+
+    }
+}

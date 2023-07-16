@@ -1,0 +1,23 @@
+page-menu {
+	[item-bcg]{
+		
+	        background-color: color($colors,primary);
+        [ion-item]{
+	  		background-color: color($colors,primary);
+	  		border-color: color($colors,primary) !important;
+	  		color: color($colors,light);
+
+	  		img{
+	  			width: 25px;
+	  			height: 25px;
+	  		}
+
+	  		ion-avatar{
+	  			padding-top: 8px;
+	  		}
+	  	}
+	    
+	    
+	}
+
+}

@@ -1,0 +1,89 @@
+page-pop-select-praline {
+    .scroll-content {
+        padding: 0 !important;
+        background-color: color($colors, noir) !important;
+    }
+    .content {
+        background-color: color($colors, noir) !important;
+    }
+    h6 {
+        color: color($colors, light);
+        span {
+            color: color($colors, praline);
+        }
+    }
+    // ion-fab {
+    //     position: absolute !important;
+    //     top: 70px !important;
+    // }
+    // #btn_left {
+    //     left: 10px !important;
+    // }
+    // #btn_right {
+    //     right: 10px !important
+    // }
+    // ion-slides {
+    //     margin-top: 10px !important
+    // }
+    // button.fab {
+    //     background: transparent !important;
+    //     box-shadow: none !important;
+    //     ion-icon {
+    //         color: color($colors, secondary) !important
+    //     }
+    // }
+    .bloc-slider {
+        margin-top: 30px;
+        background-color: transparent;
+        .item-inner {
+            border: none !important;
+        }
+        ion-label {
+            color: color($colors, light);
+        }
+    }
+    .down_icon {
+        width: 30px !important;
+        height: 30px !important;
+    }
+    #number_selected {
+        color: color($colors, praline) !important;
+        font-size: 2em !important
+    }
+    .text-code {
+        // width: 40%;
+        // margin: auto;
+        // margin-top: 30px;
+        background-color: color($colors, grislight);
+        .text-input {
+            text-align: center;
+        }
+    }
+    .bloc-footer {
+        [col-3] {
+            ion-icon {
+                font-size: 3.05em;
+                color: color($colors, praline);
+            }
+        }
+    }
+    .custom-card {
+        h5,
+        h4,
+        p {
+            color: color($colors, light);
+        }
+        .bloc-header {
+            p {
+                color: color($colors, praline);
+                font-size: 1.2em;
+            }
+            h6 {
+                font-weight: normal;
+            }
+        }
+    }
+    .count {
+        -webkit-animation-iteration-count: 3 !important;
+    }
+}

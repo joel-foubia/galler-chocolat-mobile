@@ -1,0 +1,265 @@
+// http://ionicframework.com/docs/v2/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+@font-face {
+    font-family: 'Cantarell';
+    src: url('../assets/fonts/Cantarell-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Cantarell-Bold';
+    src: url('../assets/fonts/Cantarell-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Cantarell-Oblique';
+    src: url('../assets/fonts/Cantarell-Oblique.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Cantarell-Bold-Oblique';
+    src: url('../assets/fonts/Cantarell-BoldOblique.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'DearJoe6';
+    src: url('../assets/fonts/dearJoe6.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  .scroll-content{
+    font-family: 'Cantarell';
+  }
+  
+  h1,h2,h3,h4,h5{
+    font-family: 'Cantarell-Bold', sans-serif;
+  }
+
+// Toolbar colors
+  .toolbar {
+    
+    align-items: flex-start;
+    min-height: 65px;
+    padding: 13px 4px;
+
+    .toolbar-title{
+      color: color($colors , light) !important;
+      text-transform: uppercase;
+      
+    }
+
+    .toolbar-background{
+        // @extend %cover;
+        background-color: color($colors, noir);
+    }
+
+    .bar-button-menutoggle, .back-button-icon{
+        color: color($colors, light);
+    }
+    
+     
+  }
+
+  .tabbar{
+    background: linear-gradient(to bottom, rgba(243,157,47,1) 0%,rgba(242,145,44,1) 35%,rgba(239,112,41,1) 100%) !important; 
+    
+    .tab-button, ion-icon{
+        color:color($colors, light) !important;
+        
+    }
+
+    ion-icon{
+        font-size: 2.45em !important;
+    }
+
+ }
+
+[obj-spinner]{
+    margin:auto;
+    display: block;
+    width: 100px;
+    height: 80px;
+}
+
+.toolbar-title{
+    font-weight: normal;
+}
+
+ion-title{
+    margin-top: 5px;
+}
+
+h2{
+    font-size: 1.9rem !important;
+    font-weight: 500 !important;
+    color: color($colors,dark) !important;
+}
+
+p{
+    color: color($colors,grayColor);
+}
+.map-fab{
+    ion-icon{
+        font-size: 3rem;
+    }
+}
+.card-md{
+    border-radius: 0;
+    // @extend %box-shadow;
+}
+
+.activeColor{
+    color: color($colors,primary);
+}
+
+// App statusbar(IOS platform) Sass
+// --------------------------------------------------
+.md ion-nav > .ion-page > ion-header > .toolbar.statusbar-padding:first-child{
+     min-height: 100px;
+}
+.md ion-nav > .ion-page > .detail-header > .toolbar.statusbar-padding:first-child{
+    min-height: 85px;
+}
+.md ion-nav > .ion-page > .home-head > .toolbar-md.statusbar-padding:first-child{
+    min-height: 165px;
+}
+.md ion-nav > .ion-page > .details-guide > .toolbar-md.statusbar-padding:first-child{
+    min-height: 80px;
+}
+
+.home-content.statusbar-padding{
+    .scroll-content{
+        margin-top: 115px !important;
+    }
+}
+
+.home-head .statusbar-padding .searchbar-md{
+    top: 65px;
+}
+
+.md ion-menu{
+    .menu-inner{
+        ion-header{
+            .toolbar.statusbar-padding{
+                &:first-child{
+                    min-height: 180px;
+                    padding-top: 20px;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 767px){
+    .md .modal-wrapper > .ion-page > ion-header > .share-toolbar.statusbar-padding:first-child{
+        padding-top: 4px;
+        min-height: 56px;
+    }
+}
+
+// App Main Menu Sass
+// --------------------------------------------------
+ion-menu{
+    .menu-inner{
+        box-shadow: 1px 1px 8px rgba(0,0,0,.7) !important;
+    }
+    ion-header{
+        clip-path: none;
+        &::after{
+            display: none;
+        }
+    }
+    .toolbar-md{
+        min-height: 120px;
+        
+    }
+    .toolbar-background-md{
+        background-image: url(../assets/images/default.jpg) !important;
+        background-size: 70% 70% !important;
+        background-repeat: no-repeat !important;
+        background-position: center !important;
+        
+    }
+    .toolbar-title-md{
+        color: color($colors , light);
+        padding-bottom: 10px;
+        font-size: 1.4rem;
+    }
+
+    .item-md{
+        background: none;
+        font-weight: 500;
+        min-height: 4.7rem;
+        text-transform: capitalize !important;
+        border-bottom: 1px solid lighten(color($colors,grayColor),38%) !important;
+        ion-icon[item-left]{
+            + .item-inner{
+                margin-left: 10px;
+            }
+        }
+        &:last-child{
+            border-bottom: none !important;
+        }
+    }
+    .item{
+        ion-icon{
+            font-size: 2.3rem;
+            min-height: 2.3rem;
+        }
+    }
+    .log-out{
+        ion-icon{
+            font-size: 2.2em;
+        }
+    }
+    .footer-md{
+        padding-bottom: 10px;
+        &::before{
+            display: none;
+        }
+    }
+
+}
+
+.custom-popuser {
+    
+    .popover-content{
+        width: 80% !important;
+        left: 40px !important;
+        height: 300px !important;
+        // background-color: transparent !important;
+        background-color: color($colors, noir) !important;
+        border-radius: 0.50em !important;
+    }
+}
+
+.custom-alert{
+    
+    .alert-wrapper{
+        border-radius: 0.50em !important;
+        background-color: color($colors, noir) !important;
+
+        .alert-message{
+            color: color($colors, light) !important;
+            font-family: "Cantarell" !important;
+        }
+
+        button:first-child{
+            color: color($colors, praline) !important;
+        }
+        button:last-child{
+            color: rgba(255,255,255,.4) !important;
+        }
+    }
+}

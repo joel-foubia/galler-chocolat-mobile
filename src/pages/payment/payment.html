@@ -1,0 +1,40 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Paiement</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content >
+  <h3>Paiement de votre ballotin personnalisé</h3>
+  <ion-grid class="bloc-ballotin">
+    <ion-row>
+      <ion-col col-8>
+          <h4>{{ballotin.myname}}</h4>
+          <p>{{ballotin.nom}} | {{ballotin.max}} pralines</p>
+      </ion-col>
+      <ion-col col-4>
+        {{ballotin.prix}}
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-item-divider text-uppercase>Détails Paiement</ion-item-divider>
+    <ion-list *ngIf="ballotin" class="cart-list">
+      <ion-item *ngFor="let item of ballotin.pralines" class="animated fadeIn">
+          <ion-thumbnail item-start>
+              <img src="{{item.img}}">
+          </ion-thumbnail>
+          <h2 text-uppercase>{{item?.nom}}</h2>
+          <p>Quantité : {{item?.quantite}}</p>
+        
+      </ion-item>
+  </ion-list>
+</ion-content>
+<ion-footer>
+  <div class="btn-footer">
+      <button (click)="payment()" color="secondary" ion-button text-uppercase clear block>Procéder au paiement</button>
+  </div>
+</ion-footer>

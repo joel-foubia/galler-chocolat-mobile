@@ -1,0 +1,26 @@
+<ion-header>
+
+    <ion-navbar>
+        <ion-title text-center><img src="assets/images/logo.jpg" height="60px"></ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding item-bcg>
+    <!-- <ion-list>
+      <button ion-item *ngFor="let p of otherMenus" (click)="showPageItem(p)">
+          <ion-avatar item-start> <img [src]="p.icon" ></ion-avatar>
+          {{ p.title }}
+      </button>
+    </ion-list> -->
+    <ion-list class="bloc-list" no-lines>
+        <ion-item text-wrap transparent *ngFor="let p of otherMenus" (click)="showPageItem(p)">
+            <ion-avatar item-start>
+                <img [src]="p.icon">
+            </ion-avatar>
+            <h3>{{p.title}}</h3>
+            <ion-icon name="ios-arrow-forward-outline" item-end></ion-icon>
+        </ion-item>
+    </ion-list>
+</ion-content>
